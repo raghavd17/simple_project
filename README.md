@@ -1,10 +1,32 @@
-# Simple_project
-Simple project (SASS - ITCSS Method ) setup with Bower and grunt with basic setting to get started with new project.
+#Sample Project to get started 
+    Simple project (SASS - ITCSS Method ) setup with Bower and grunt with basic setting to get started with new project.
 
-# Step 1
-Clone the project into you local syatem 
-#Step 2
-Run these following commands to install the dependance 
-1. npm install
-2. bower install 
-3. 
+
+#Frontend Technologies
+
+    The front-end development is powered primarily by Node, Bower, Grunt. 
+    The Styles is written in Sass with the SCSS syntax.
+
+Requirements and Installation
+
+    Install Node with the installer.
+    Install Bower globally with $ npm install -g bower
+    Install Grunt globally with $ npm install -g grunt
+
+#Development
+
+Install the required tool, utilities and libraries
+
+$ npm install
+$ bower install
+
+#Tasks
+
+This project uses Grunt to run automated tasks for development and production builds.
+
+    gulp watch: Watches the changes and compiles preprocessors.
+
+    grunt: Same as Grunt task runner, but will also run grunt test and not start up.
+
+    gulp jshint: Lints all *.js file in the source folder using eslint and runs all *.test.js file unit tests through Karma and Jasmine.
+
