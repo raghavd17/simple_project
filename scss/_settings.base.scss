@@ -1,0 +1,223 @@
+// import the primary library
+@import '../bower_components/bourbon/app/assets/stylesheets/bourbon';
+
+// global switch
+// modify global styling by enabling or disabling optional features
+
+$enable-flex         : false;
+$enable-rounded      : true;
+$enable-shadows      : false;
+$enable-gradients    : true;
+$enable-transitions  : false;
+$enable-grid-classes : true;
+// $enable-baseline-grid: true;
+// $enable-debug-hard   : true;
+
+// paths
+// $path-images         : '../images/';
+// $path-fonts          : '../fonts/';
+
+// set the initial em base
+$em-base             : 14px;
+
+// ratio
+$golden              : 1.618;
+$minor-second        : 1.067;
+$major-second        : 1.125;
+$minor-third         : 1.2;
+$major-third         : 1.25;
+$perfect-fourth      : 1.333;
+$augmented-fourth    : 1.414;
+$perfect-fifth       : 1.5;
+$minor-sixth         : 1.6;
+$major-sixth         : 1.667;
+$minor-seventh       : 1.778;
+$major-seventh       : 1.875;
+$octave              : 2;
+$major-tenth         : 2.5;
+$major-eleventh      : 2.667;
+$major-twelfth       : 3;
+$double-octave       : 4;
+
+$modular-scale-ratio : $perfect-fourth;
+$modular-scale-base  : rem($em-base);
+
+// the ration we use for DMart
+$dmart-ratio         : $modular-scale-ratio;
+
+// colors
+$white               : #fff;
+$black               : #000;
+$gray                : #55595c;
+$gray-dark           : #373a3c;
+$gray-light          : #b3b3b3;
+$gray-lighter        : #dbdbdb;
+$gray-lightest       : #f7f7f7;
+
+// brand color
+// color: brand-color(primary);
+$brand-color: (
+  primary        : #287345, // DMart Green
+  secondary      : #d35400, // DMart Orange
+  tertiary       : #c1a36f, // DMart Brown
+  quaternary     : #3e1b04, // DMart Coffee
+  quinary       : #181717,
+
+  // grays, black and white
+  gray           : $gray,
+  gray-dark      : $gray-dark,
+  gray-light     : $gray-light,
+  gray-lighter   : $gray-lighter,
+  gray-lightest  : $gray-lightest,
+  white          : $white,
+  black          : $black,
+  dark           : #181717,
+
+  // DMart Greens
+  green-darkest  : #3d4942,
+  green-lighter  : #6dad5c,
+  green-lightest : #6bb757,
+  green-dark     : #45a46a,
+  green-darker   : #3c8c5b,
+
+  // body and text
+  body           : $white,
+  text           : #333,
+  text-heading   : #111,
+  link           : #3d4942,
+
+  // alerts
+  success        : #5cb85c,
+  info           : #5bc0de,
+  warning        : #f0ad4e,
+  danger         : #d9534f,
+
+  // brandcolors.net
+  twitter        : #55acee,
+  facebook       : #4c769a,
+  google        : #dd4b39
+);
+
+// font-size: font-sizes(0);
+$font-sizes: (
+  0: modular-scale(0, $modular-scale-base, $dmart-ratio),
+
+  // headings
+  1: modular-scale(3),
+  2: modular-scale(2),
+  3: modular-scale(1),
+  4: modular-scale(0),
+  5: modular-scale(-1),
+  6: modular-scale(-2),
+
+  1xs: modular-scale(2),
+  2xs: modular-scale(1),
+  3xs: modular-scale(0),
+  4xs: modular-scale(-1),
+  5xs: modular-scale(-2),
+  6xs: modular-scale(-2),
+
+  // misc
+  small: modular-scale(-1),
+  smaller: smaller
+);
+
+// font-weights
+// font-weight: font-weight(thin)
+$font-weight: (
+  thin      : 100,
+  light     : 200,
+  normal    : 300,
+  medium    : 400,
+  bold      : 600,
+  ultrabold : 700
+);
+
+// links
+$link-color             : brand-color(link);
+$link-decoration        : none;
+// $link-hover-color       : darken($link-color, 15%);
+$link-hover-decoration  : underline;
+
+
+// font-families
+$font-family-sans-serif : 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family-serif      : Georgia, 'Times New Roman', Times, serif;
+$font-family-monospace  : Menlo, Monaco, Consolas, 'Courier New', monospace;
+
+$font-family            : 'Open Sans', $font-family-sans-serif;
+$font-family-heading    : 'Open Sans', $font-family-sans-serif;
+$font-family-icons      : 'dmart-icons';
+
+
+// typography
+$line-height            : $major-sixth;
+$line-height-reset      : 1;
+$font-size-base         : font-sizes(0);
+
+// spacing
+$spacing                : rem($em-base * $line-height);
+$spacing-half           : $spacing/2;
+$spacing-third          : $spacing/3;
+$spacing-quarter        : $spacing/4;
+$spacing-tiny           : $spacing-quarter/2;
+$spacing-double         : $spacing*2;
+$spacing-thrice         : $spacing*3;
+
+// headings
+$headings-font-family   : $font-family-heading;
+$headings-font-weight   : font-weight(bold);
+$headings-line-height   : $minor-third;
+$headings-color         : brand-color(text-heading);
+$headings-margin-bottom : $spacing;
+
+// blockquotes
+$blockquote-small-color : brand-color(gray-light);
+
+
+// borders
+$border-radius          : 2px;
+// 50% gives an oval when height != width
+$border-radius-rounded  : 9999em;
+$border-width           : 1px;
+$border-color           : rgba(0, 0, 0, 0.1);
+$border-color-alt       : rgba(255, 255, 255, 0.3);
+
+// grid breakpoints
+//
+// define the minimum and maximum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+$grid-breakpoints: (
+  // extra small screen / phone
+  xs: 0,
+  // small screen / phone
+  sm: 480px,
+  // medium screen / tablet
+  md: 768px,
+  // large screen / desktop
+  lg: 1024px,
+  // extra large screen / wide desktop
+  xl: 1440px
+);
+
+
+// grid containers
+// define the maximum width of the container for different screen sizes
+$container-max-widths: (
+  sm: 480px,
+  md: 760px,
+  lg: 1000px,
+  xl: 1140px
+);
+
+// grid columns
+$grid-columns: 12;
+$grid-gutter-width: 20px;
+
+// z-index
+// usage - z-index: z-index(default);
+$z-index: (
+  default : 1,
+  modal   : 999,
+  cart-summary : 2
+);

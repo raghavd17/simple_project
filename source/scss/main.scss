@@ -1,0 +1,24 @@
+/* ==========================================================================* /
+/*
+ * Tools: Default mixins and functions
+ * Settings: Global variables, config switches
+ * Generic: Ground-zero styles (Normalize, resets, box-sizing)
+ * Base: Unclassed HTML elements (type selectors)
+ * Vendor: Vendor specific files
+ * Objects: Cosmetic-free design patterns
+ * Component: Designed components, chunks of UI
+ * Theme: Component Modifiers
+ * Utilities: Helpers and overrides
+ / *************************************************************************** /
+/* ===========================================================================*/
+
+
+@import 'tools.core';
+@import 'settings.core';
+@import 'generic.core';
+@import 'base.core';
+@import 'vendor.core';
+@import 'objects.core';
+@import 'component.core';
+@import 'theme.core';
+@import 'utilities.core';
