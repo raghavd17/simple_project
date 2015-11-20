@@ -6,3 +6,4 @@ Clone the project into you local syatem
 Run these following commands to install the dependance 
 1. npm install
 2. bower install 
+3. 
