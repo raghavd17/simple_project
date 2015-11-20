@@ -1,0 +1,85 @@
+.modal-dialog {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    display: none;
+    transition: opacity 400ms ease-in;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin: 0;
+    // &:target {
+    //     display: block;
+    //     pointer-events: auto;
+    // }
+    .modal-dialog__content {
+        position: absolute;
+        margin: 0;
+        top: 50%;
+        border-radius: 2px;
+        left: 50%;
+        background: #fff;
+        transform: translate(-50%,-50%);
+        border-radius: $border-radius;
+        background: brand-color(white);
+        &.modal-dialog__content-large {
+            width: 60%;
+        }
+        &.modal-dialog__content-medium {
+            width: 42%;
+        }
+        &.modal-dialog__content-small {
+            width: 30%;
+        }
+        @include media-breakpoint-down(md) {
+            &.modal-dialog__content-large,
+            &.modal-dialog__content-medium,
+            &.modal-dialog__content-small {
+                width: 90%;
+            }
+        }
+        @include media-breakpoint-down(sm) {
+            margin: 0 0 20px;
+            top: 20%;
+            transform: translate(-50%);
+        }
+    }
+    .modal-dialog__header {
+        background: brand-color(gray-lightest);
+        padding: 15px 40px;
+        border-top-left-radius: $border-radius;
+        border-top-right-radius: $border-radius;
+        @include media-breakpoint-down(sm) {
+            padding: 15px;
+        }
+        .modal-dialog__header-title {
+            margin-bottom: 0;
+        }
+    }
+    .modal-dialog__body {
+        padding: 15px 40px 40px;
+        .form--modal {
+            border-top: 0;
+            margin-top: 0;
+        }
+        @include media-breakpoint-down(sm) {
+            padding: 15px;
+        }
+    }
+    .modal-dialog__close {
+        background: brand-color(secondary);
+        color: brand-color(white);
+        line-height: 25px;
+        position: absolute;
+        right: -8px;
+        text-align: center;
+        top: -8px;
+        width: 24px;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: $border-radius-rounded;
+    }
+}

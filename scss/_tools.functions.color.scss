@@ -1,0 +1,12 @@
+// return the color from a color map
+//
+// USAGE
+// color: brand-color(primary);
+//
+@function brand-color($color) {
+  @if map-has-key($brand-color, $color) {
+    @return map-get($brand-color, $color);
+  }
+  @warn "Unknown `#{$color}` in $brand-color.";
+  @return null;
+}

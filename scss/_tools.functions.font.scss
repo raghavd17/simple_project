@@ -1,0 +1,26 @@
+// return the font-size from a font-size map
+//
+// USAGE
+// font-size: font-size(1);
+//
+@function font-sizes($size) {
+  @if map-has-key($font-sizes, $size) {
+    @return map-get($font-sizes, $size);
+  }
+  @warn "Unknown `#{$size}` in $font-sizes.";
+  @return null;
+}
+
+
+// return the font-weight from a font-weight map
+//
+// USAGE
+// font-weight: font-weight(normal);
+//
+@function font-weight($weight) {
+  @if map-has-key($font-weight, $weight) {
+    @return map-get($font-weight, $weight);
+  }
+  @warn "Unknown `#{$weight}` in $font-weight.";
+  @return null;
+}
