@@ -1,0 +1,21 @@
+{
+  "name": "sample_project",
+  "version": "0.0.0",
+  "homepage": "https://github.com/raghavd17/simple_project",
+  "authors": [
+    "Raghavendra Diddimani <raghavd17@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bourbon": "~4.2.6",
+    "ciku-forms": "~0.0.5",
+    "normalize-scss": "~3.0.3"
+  }
+}
