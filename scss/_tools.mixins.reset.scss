@@ -1,0 +1,56 @@
+// resetting padding
+@mixin reset-padding($val) {
+  @if $val == left {
+    padding-left: 0 !important;
+  }
+  @if $val == right {
+    padding-right: 0 !important;
+  }
+  @if $val == top {
+    padding-top: 0 !important;
+  }
+  @if $val == bottom {
+    padding-bottom: 0 !important;
+  }
+  @if $val == all {
+    padding: 0 !important;
+  }
+}
+
+
+// resetting margin
+@mixin reset-margin($val) {
+  @if $val == left {
+    margin-left: 0;
+  }
+  @if $val == right {
+    margin-right: 0;
+  }
+  @if $val == top {
+    margin-top: 0;
+  }
+  @if $val == bottom {
+    margin-bottom: 0;
+  }
+  @if $val == all {
+    margin: 0;
+  }
+}
+// resetting border
+@mixin reset-border($val) {
+  @if $val == left {
+    border-left: 0;
+  }
+  @if $val == right {
+    border-right: 0;
+  }
+  @if $val == top {
+    border-top: 0;
+  }
+  @if $val == bottom {
+    border-bottom: 0;
+  }
+  @if $val == all {
+    border: 0;
+  }
+}

@@ -10,11 +10,11 @@ $enable-shadows      : false;
 $enable-gradients    : true;
 $enable-transitions  : false;
 $enable-grid-classes : true;
-// $enable-baseline-grid: true;
+$enable-baseline-grid: true;
 // $enable-debug-hard   : true;
 
 // paths
-// $path-images         : '../images/';
+// $path-images         : '../img/';
 // $path-fonts          : '../fonts/';
 
 // set the initial em base
@@ -147,7 +147,7 @@ $font-family-monospace  : Menlo, Monaco, Consolas, 'Courier New', monospace;
 
 $font-family            : 'Open Sans', $font-family-sans-serif;
 $font-family-heading    : 'Open Sans', $font-family-sans-serif;
-$font-family-icons      : 'dmart-icons';
+// $font-family-icons      : 'dmart-icons';
 
 
 // typography

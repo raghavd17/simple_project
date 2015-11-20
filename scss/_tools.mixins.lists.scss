@@ -1,0 +1,35 @@
+@mixin list-unstyled($padding: 0) {
+  padding-left: $padding;
+  list-style: none;
+}
+
+// applies to a UL or OL
+@mixin list-as-nav($direction: left, $padding: $spacing-third) {
+  @include clearfix;
+  float: $direction;
+  padding: 0;
+  margin: 0;
+
+  li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    white-space: nowrap;
+
+    // set the float direction
+    float: left;
+
+    @if $padding {
+      padding-left: $padding;
+      padding-right: $padding;
+    }
+
+    &:first-child {
+      padding-#{$direction}: 0;
+    }
+
+    &:last-child {
+      padding-#{opposite-direction($direction)}: 0;
+    }
+  }
+}

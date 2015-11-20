@@ -1,0 +1,168 @@
+p {
+  margin-top: 0;
+  margin-bottom: $spacing;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+ol,
+ul,
+dl {
+  margin-top: 0;
+  margin-bottom: $spacing;
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  margin-bottom: 0;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-bottom: $spacing/2;
+  margin-left: 0; // undo browser default
+}
+
+a {
+  color: $link-color;
+  text-decoration: $link-decoration;
+
+  &:hover,
+  &:focus {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+  }
+
+  &:focus {
+    @include tab-focus();
+  }
+}
+
+pre {
+  // remove browser default top margin
+  margin-top: 0;
+  // reset browser default of `1em` to use `rem`s
+  margin-bottom: $spacing;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $headings-color;
+  margin-top: 0;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  line-height: $headings-line-height;
+}
+
+h1, h2, h3 {
+  margin-bottom: $headings-margin-bottom;
+}
+h4, h5, h6 {
+  margin-bottom: $headings-margin-bottom/$dmart-ratio;
+}
+
+h1, .h1 { font-size: font-sizes(1); }
+h2, .h2 { font-size: font-sizes(2); }
+h3, .h3 { font-size: font-sizes(3); }
+h4, .h4 { font-size: font-sizes(4); }
+h5, .h5 { font-size: font-sizes(5); }
+h6, .h6 { font-size: font-sizes(6); }
+
+hr {
+  margin-top: $spacing-third;
+  margin-bottom: $spacing-third;
+  border: 0 none;
+  border-top: $border-width solid $border-color;
+}
+
+small,
+.small {
+  font-size: font-sizes(small);
+  font-weight: font-weight(normal);
+}
+
+mark,
+.mark {
+  padding: .2em;
+  background-color: brand-color(warning);
+}
+
+// Unstyled keeps list items block level, just removes default browser padding and list-style
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+// Inline turns list items into inline-block
+.list-inline {
+  padding-left: 0;
+  margin-left: -5px;
+  list-style: none;
+
+  > li {
+    display: inline-block;
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+}
+
+// Horizontal description lists w/ grid classes
+.dl-horizontal {
+  margin-right: -$grid-gutter-width;
+  margin-left: -$grid-gutter-width;
+  @include clearfix;
+}
+
+
+// Blockquotes
+.blockquote {
+  padding: ($spacing / 2) $spacing;
+  margin-bottom: $spacing;
+  font-size: $font-size-base * $dmart-ratio;
+
+  p,
+  ul,
+  ol {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  footer {
+    display: block;
+    font-size: $font-size-base / $dmart-ratio;
+    line-height: $line-height;
+    color: $blockquote-small-color;
+
+    &::before {
+      content: "\2014 \00A0"; // em dash, nbsp
+    }
+  }
+}
+
+.list-unstyled {
+  @include list-unstyled($padding: 0);
+}
+
+// Inline turns list items into inline-block
+.list-inline {
+  padding-left: 0;
+  margin-left: -5px;
+  list-style: none;
+
+  > li {
+    display: inline-block;
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+}
