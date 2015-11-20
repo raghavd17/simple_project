@@ -1,6 +1,6 @@
 svg_icons/
-sites/all/themes/mediatek/*/*.css
-sites/all/themes/mediatek/*/*.css.map
+*/*.css
+*/*.css.map
 *.log
 *.sublime-workspace
 bower_components
