@@ -1,5 +1,6 @@
 #Sample Project to get started 
-    Simple project (SASS - ITCSS Method ) setup with Bower and grunt with basic setting to get started with new project.
+
+Simple project (SASS - ITCSS Method ) setup with Bower and grunt with basic setting to get started with new project.
 
 
 #Frontend Technologies
