@@ -1,5 +1,6 @@
 # Simple_project
-Simple project setup with Bower and grunt with basic setting to get started with new project.
+Simple project (SASS - ITCSS Method ) setup with Bower and grunt with basic setting to get started with new project.
+
 # Step 1
 Clone the project into you local syatem 
 #Step 2
