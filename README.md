@@ -1,6 +1,6 @@
-# simple_project
+# Simple_project
 Simple project setup with Bower and grunt with basic setting to get started with new project.
-# step 1
+# Step 1
 Clone the project into you local syatem 
 #Step 2
 Run these following commands to install the dependance 
