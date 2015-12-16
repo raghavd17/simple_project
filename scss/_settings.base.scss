@@ -4,7 +4,7 @@
 // global switch
 // modify global styling by enabling or disabling optional features
 
-$enable-flex         : false;
+$enable-flex         : true;
 $enable-rounded      : true;
 $enable-shadows      : false;
 $enable-gradients    : true;
@@ -136,7 +136,7 @@ $font-weight: (
 // links
 $link-color             : brand-color(link);
 $link-decoration        : none;
-// $link-hover-color       : darken($link-color, 15%);
+$link-hover-color       : darken($link-color, 15%);
 $link-hover-decoration  : underline;
 
 

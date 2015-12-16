@@ -5,7 +5,7 @@
  * Generic: Ground-zero styles (Normalize, resets, box-sizing)
  * Base: Unclassed HTML elements (type selectors)
  * Vendor: Vendor specific files
- * Objects: Cosmetic-free design patterns
+ * Objects: Cosmetic-free design patterns (Breakpoints)
  * Component: Designed components, chunks of UI
  * Theme: Component Modifiers
  * Utilities: Helpers and overrides
@@ -18,7 +18,7 @@
 @import 'generic.core';
 @import 'base.core';
 // @import 'vendor.core';
-// @import 'objects.core';
-// @import 'component.core';
+@import 'objects.core';
+@import 'component.core';
 // @import 'theme.core';
-// @import 'utilities.core';
+@import 'utilities.core';

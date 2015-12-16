@@ -1,0 +1,6 @@
+footer {
+  @include breakpoint-min(md) {
+    background: red;
+  }
+  background:yellow;
+}

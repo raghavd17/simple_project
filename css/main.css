@@ -1,646 +1,95 @@
-/* ==========================================================================* /
 /*
- * Tools: Default mixins and functions
- * Settings: Global variables, config switches
- * Generic: Ground-zero styles (Normalize, resets, box-sizing)
- * Base: Unclassed HTML elements (type selectors)
- * Vendor: Vendor specific files
- * Objects: Cosmetic-free design patterns
- * Component: Designed components, chunks of UI
- * Theme: Component Modifiers
- * Utilities: Helpers and overrides
- / *************************************************************************** /
-/* ===========================================================================*/
-/* ==========================================================================
-   Normalize.scss settings
-   ========================================================================== */
-/**
- * Includes legacy browser support IE6/7
- *
- * Set to false if you want to drop support for IE6 and IE7
- */
-/* Base
-   ========================================================================== */
-/**
- * 1. Set default font family to sans-serif.
- * 2. Prevent iOS and IE text size adjust after device orientation change,
- *    without disabling user zoom.
- * 3. Corrects text resizing oddly in IE 6/7 when body `font-size` is set using
- *  `em` units.
- */
-html {
-  font-family: sans-serif;
-  /* 1 */
-  -ms-text-size-adjust: 100%;
-  /* 2 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */
-}
-
-/**
- * Remove default margin.
- */
-body {
-  margin: 0;
-}
-
-/* HTML5 display definitions
-   ========================================================================== */
-/**
- * Correct `block` display not defined for any HTML5 element in IE 8/9.
- * Correct `block` display not defined for `details` or `summary` in IE 10/11
- * and Firefox.
- * Correct `block` display not defined for `main` in IE 11.
- */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-menu,
-nav,
-section,
-summary {
-  display: block;
-}
-
-/**
- * 1. Correct `inline-block` display not defined in IE 6/7/8/9 and Firefox 3.
- * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
- */
-audio,
-canvas,
-progress,
-video {
-  display: inline-block;
-  /* 1 */
-  vertical-align: baseline;
-  /* 2 */
-}
-
-/**
- * Prevents modern browsers from displaying `audio` without controls.
- * Remove excess height in iOS 5 devices.
- */
-audio:not([controls]) {
-  display: none;
-  height: 0;
-}
-
-/**
- * Address `[hidden]` styling not present in IE 8/9/10.
- * Hide the `template` element in IE 8/9/10/11, Safari, and Firefox < 22.
- */
-[hidden],
-template {
-  display: none;
-}
-
-/* Links
-   ========================================================================== */
-/**
- * Remove the gray background color from active links in IE 10.
- */
-a {
-  background-color: transparent;
-}
-
-/**
- * Improve readability of focused elements when they are also in an
- * active/hover state.
- */
-a:active, a:hover {
-  outline: 0;
-}
-
-/* Text-level semantics
-   ========================================================================== */
-/**
- * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
- */
-abbr[title] {
-  border-bottom: 1px dotted;
-}
-
-/**
- * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
- */
-b,
-strong {
-  font-weight: bold;
-}
-
-/**
- * Address styling not present in Safari and Chrome.
- */
-dfn {
-  font-style: italic;
-}
-
-/**
- * Address variable `h1` font-size and margin within `section` and `article`
- * contexts in Firefox 4+, Safari, and Chrome.
- */
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
-
-/**
- * Addresses styling not present in IE 8/9.
- */
-mark {
-  background: #ff0;
-  color: #000;
-}
-
-/**
- * Address inconsistent and variable font size in all browsers.
- */
-small {
-  font-size: 80%;
-}
-
-/**
- * Prevent `sub` and `sup` affecting `line-height` in all browsers.
- */
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sup {
-  top: -0.5em;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-/* Embedded content
-   ========================================================================== */
-/**
- * 1. Remove border when inside `a` element in IE 8/9/10.
- * 2. Improves image quality when scaled in IE 7.
- */
-img {
-  border: 0;
-}
-
-/**
- * Correct overflow not hidden in IE 9/10/11.
- */
-svg:not(:root) {
-  overflow: hidden;
-}
-
-/* Grouping content
-   ========================================================================== */
-/**
- * Address margin not present in IE 8/9 and Safari.
- */
-figure {
-  margin: 1em 40px;
-}
-
-/**
- * Address differences between Firefox and other browsers.
- */
-hr {
-  box-sizing: content-box;
-  height: 0;
-}
-
-/**
- * Contain overflow in all browsers.
- */
-pre {
-  overflow: auto;
-}
-
-/**
- * Address odd `em`-unit font size rendering in all browsers.
- * Correct font family set oddly in IE 6, Safari 4/5, and Chrome.
- */
-code,
-kbd,
-pre,
-samp {
-  font-family: monospace, monospace;
-  font-size: 1em;
-}
-
-/* Forms
-   ========================================================================== */
-/**
- * Known limitation: by default, Chrome and Safari on OS X allow very limited
- * styling of `select`, unless a `border` property is set.
- */
-/**
- * 1. Correct color not being inherited.
- *  Known issue: affects color of disabled elements.
- * 2. Correct font properties not being inherited.
- * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
- * 4. Improves appearance and consistency in all browsers.
- */
-button,
-input,
-optgroup,
-select,
-textarea {
-  color: inherit;
-  /* 1 */
-  font: inherit;
-  /* 2 */
-  margin: 0;
-  /* 3 */
-}
-
-/**
- * Address `overflow` set to `hidden` in IE 8/9/10/11.
- */
-button {
-  overflow: visible;
-}
-
-/**
- * Address inconsistent `text-transform` inheritance for `button` and `select`.
- * All other form control elements do not inherit `text-transform` values.
- * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
- * Correct `select` style inheritance in Firefox.
- */
-button,
-select {
-  text-transform: none;
-}
-
-/**
- * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
- *  and `video` controls.
- * 2. Correct inability to style clickable `input` types in iOS.
- * 3. Improve usability and consistency of cursor style between image-type
- *  `input` and others.
- * 4. Removes inner spacing in IE 7 without affecting normal text inputs.
- *  Known issue: inner spacing remains in IE 6.
- */
-button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-  -webkit-appearance: button;
-  /* 2 */
-  cursor: pointer;
-  /* 3 */
-}
-
-/**
- * Re-set default cursor for disabled elements.
- */
-button[disabled],
-html input[disabled] {
-  cursor: default;
-}
-
-/**
- * Remove inner padding and border in Firefox 4+.
- */
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-}
-
-/**
- * Address Firefox 4+ setting `line-height` on `input` using `!important` in
- * the UA stylesheet.
- */
-input {
-  line-height: normal;
-}
-
-/**
- * 1. Address box sizing set to `content-box` in IE 8/9/10.
- * 2. Remove excess padding in IE 8/9/10.
- *  Known issue: excess padding remains in IE 6.
- */
-input[type="checkbox"],
-input[type="radio"] {
-  box-sizing: border-box;
-  /* 1 */
-  padding: 0;
-  /* 2 */
-}
-
-/**
- * Fix the cursor style for Chrome's increment/decrement buttons. For certain
- * `font-size` values of the `input`, it causes the cursor style of the
- * decrement button to change from `default` to `text`.
- */
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  height: auto;
-}
-
-/**
- * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
- * 2. Address `box-sizing` set to `border-box` in Safari and Chrome.
- */
-input[type="search"] {
-  -webkit-appearance: textfield;
-  /* 1 */
-  box-sizing: content-box;
-  /* 2 */
-}
-
-/**
- * Remove inner padding and search cancel button in Safari and Chrome on OS X.
- * Safari (but not Chrome) clips the cancel button when the search input has
- * padding (and `textfield` appearance).
- */
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-/**
- * Define consistent border, margin, and padding.
- */
-fieldset {
-  border: 1px solid #c0c0c0;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
-}
-
-/**
- * 1. Correct `color` not being inherited in IE 8/9/10/11.
- * 2. Remove padding so people aren't caught out if they zero out fieldsets.
- * 3. Corrects text not wrapping in Firefox 3.
- * 4. Corrects alignment displayed oddly in IE 6/7.
- */
-legend {
-  border: 0;
-  /* 1 */
-  padding: 0;
-  /* 2 */
-}
-
-/**
- * Remove default vertical scrollbar in IE 8/9/10/11.
- */
-textarea {
-  overflow: auto;
-}
-
-/**
- * Don't inherit the `font-weight` (applied by a rule above).
- * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
- */
-optgroup {
-  font-weight: bold;
-}
-
-/* Tables
-   ========================================================================== */
-/**
- * Remove most spacing between table cells.
- */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-td,
-th {
-  padding: 0;
-}
-
-fieldset {
-  min-width: 0;
-  padding: 0;
-  margin: 0;
-  border: 0;
-}
-
-legend {
-  display: block;
-  width: 100%;
-  padding: 0;
-  margin-bottom: 1.4em;
-  font-size: 100%;
-  font-weight: bold;
-  line-height: inherit;
-  color: #222;
-  border: 0;
-  border-bottom: 1px solid #e6e6e6;
-}
-
-label {
-  display: block;
-  max-width: 100%;
-  margin-bottom: 0.35em;
-  font-weight: normal;
-}
-
-input[type="search"] {
-  box-sizing: border-box;
-}
-
-input[type="radio"],
-input[type="checkbox"] {
-  margin: 4px 0 0;
-  margin-top: 1px \9;
-  line-height: normal;
-}
-
-input[type="file"] {
-  display: block;
-}
-
-input[type="range"] {
-  display: block;
-  width: 100%;
-}
-
-select[multiple],
-select[size] {
-  height: auto;
-}
-
-input[type="file"]:focus,
-input[type="radio"]:focus,
-input[type="checkbox"]:focus {
-  outline: thin dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px;
-}
-
-output {
-  display: block;
-  margin-bottom: 1.4em;
-  font-size: 100%;
-  line-height: 1.4;
-  color: #222;
-}
-
-textarea {
-  overflow: auto;
-  resize: vertical;
-}
-
-fieldset {
-  display: block;
-  width: 100%;
-  margin-bottom: 1.4em;
-}
-
-legend {
-  padding-top: 0.7em;
-  padding-bottom: 0.35em;
-}
-
-label + label {
-  padding-top: 0.35em;
-}
-
-button,
-input[type="submit"] {
-  display: inline-block;
-  padding: 0.46667em 0.7em;
-  margin-bottom: 1.4em;
-  font-size: 100%;
-  line-height: 1;
-  vertical-align: middle;
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 2px;
-}
-
-input[type="submit"] {
-  color: white;
-  background-color: #307cd6;
-  border-color: #2364b0;
-}
-
-select,
-input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea {
-  display: block;
-  width: 100%;
-  padding: 0.23333em 0.35em;
-  margin-bottom: 1.4em;
-  font-family: inherit;
-  font-size: 100%;
-  line-height: 1.4;
-  border: 1px solid #ccc;
-  border-radius: 2px;
-  box-sizing: border-box;
-}
-select::-moz-placeholder,
-input[type="date"]::-moz-placeholder, input[type="datetime"]::-moz-placeholder, input[type="datetime-local"]::-moz-placeholder, input[type="email"]::-moz-placeholder, input[type="month"]::-moz-placeholder, input[type="number"]::-moz-placeholder, input[type="password"]::-moz-placeholder, input[type="search"]::-moz-placeholder, input[type="tel"]::-moz-placeholder, input[type="text"]::-moz-placeholder, input[type="time"]::-moz-placeholder, input[type="url"]::-moz-placeholder, input[type="week"]::-moz-placeholder, input:not([type])::-moz-placeholder, textarea::-moz-placeholder {
-  color: #999;
-  opacity: 1;
-}
-select:-ms-input-placeholder,
-input[type="date"]:-ms-input-placeholder, input[type="datetime"]:-ms-input-placeholder, input[type="datetime-local"]:-ms-input-placeholder, input[type="email"]:-ms-input-placeholder, input[type="month"]:-ms-input-placeholder, input[type="number"]:-ms-input-placeholder, input[type="password"]:-ms-input-placeholder, input[type="search"]:-ms-input-placeholder, input[type="tel"]:-ms-input-placeholder, input[type="text"]:-ms-input-placeholder, input[type="time"]:-ms-input-placeholder, input[type="url"]:-ms-input-placeholder, input[type="week"]:-ms-input-placeholder, input:not([type]):-ms-input-placeholder, textarea:-ms-input-placeholder {
-  color: #999;
-}
-select::-webkit-input-placeholder,
-input[type="date"]::-webkit-input-placeholder, input[type="datetime"]::-webkit-input-placeholder, input[type="datetime-local"]::-webkit-input-placeholder, input[type="email"]::-webkit-input-placeholder, input[type="month"]::-webkit-input-placeholder, input[type="number"]::-webkit-input-placeholder, input[type="password"]::-webkit-input-placeholder, input[type="search"]::-webkit-input-placeholder, input[type="tel"]::-webkit-input-placeholder, input[type="text"]::-webkit-input-placeholder, input[type="time"]::-webkit-input-placeholder, input[type="url"]::-webkit-input-placeholder, input[type="week"]::-webkit-input-placeholder, input:not([type])::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
-  color: #999;
-}
-select:focus,
-input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus, input:not([type]):focus, textarea:focus {
-  border-color: #5b97de;
-  outline: 0;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(91, 151, 222, 0.6);
-}
-
-select {
-  height: 2.1em;
-}
-
-input[type="radio"],
-input[type="checkbox"] {
-  margin-top: 0;
-}
-label input[type="radio"], label
-input[type="checkbox"] {
-  position: relative;
-  top: -.181818182em;
-  margin-right: 0.175em;
-}
-
-html {
-  box-sizing: border-box;
-  -webkit-tap-highlight-color: transparent;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-@-moz-viewport {
-  width: device-width;
-}
-@-ms-viewport {
-  width: device-width;
-}
-@-o-viewport {
-  width: device-width;
-}
-@-webkit-viewport {
-  width: device-width;
-}
-@viewport {
-  width: device-width;
-}
-html {
-  font-size: 14px;
-}
-
-body {
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: font-sizes(0);
-  line-height: 1.667;
-  color: brand-color(text);
-  background-color: brand-color(body);
-}
-
-figure {
-  margin: 0 0 1.667rem;
-  display: inline-block;
-}
-figure > img {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 0.8335rem;
-  line-height: 1;
-}
-figure caption {
-  font-size: 90%;
-  color: brand-color(gray-light);
-}
-
-img {
-  vertical-align: middle;
-}
-
-[role="button"] {
-  cursor: pointer;
-}
-
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-/*# sourceMappingURL=main.css.map */
+Error: Undefined mixin 'breakpoint-min'.
+        on line 2 of scss/_component.footer.scss, in `breakpoint-min'
+        from line 2 of scss/_component.footer.scss
+        from line 5 of scss/_component.core.scss
+        from line 22 of scss/main.scss
+
+1: /* ==========================================================================* /
+2: /*
+3:  * Tools: Default mixins and functions
+4:  * Settings: Global variables, config switches
+5:  * Generic: Ground-zero styles (Normalize, resets, box-sizing)
+6:  * Base: Unclassed HTML elements (type selectors)
+7:  * Vendor: Vendor specific files
+
+Backtrace:
+scss/_component.footer.scss:2:in `breakpoint-min'
+scss/_component.footer.scss:2
+scss/_component.core.scss:5
+scss/main.scss:22
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:349:in `block in visit_mixin'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:98:in `block in with_mixin'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:115:in `with_frame'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:98:in `with_mixin'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:347:in `visit_mixin'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:79:in `block in with_base'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:115:in `with_frame'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:79:in `with_base'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:158:in `visit'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:431:in `block (2 levels) in visit_rule'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:431:in `map'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:431:in `block in visit_rule'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:429:in `visit_rule'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:79:in `block in with_base'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:115:in `with_frame'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:79:in `with_base'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:158:in `visit'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:326:in `block (2 levels) in visit_import'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:326:in `map'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:326:in `block in visit_import'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:88:in `block in with_import'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:115:in `with_frame'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:88:in `with_import'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:323:in `visit_import'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:79:in `block in with_base'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:115:in `with_frame'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:79:in `with_base'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:158:in `visit'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:326:in `block (2 levels) in visit_import'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:326:in `map'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:326:in `block in visit_import'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:88:in `block in with_import'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:115:in `with_frame'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:88:in `with_import'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:323:in `visit_import'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:79:in `block in with_base'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:115:in `with_frame'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:79:in `with_base'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:158:in `visit'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:52:in `map'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:157:in `visit'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:8:in `visit'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/root_node.rb:36:in `css_tree'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/engine.rb:378:in `_render_with_sourcemap'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/engine.rb:295:in `render_with_sourcemap'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/exec/sass_scss.rb:410:in `run'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/exec/sass_scss.rb:63:in `process_result'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/exec/base.rb:52:in `parse'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/exec/base.rb:19:in `parse!'
+C:/Ruby22/lib/ruby/gems/2.2.0/gems/sass-3.4.18/bin/sass:13:in `<top (required)>'
+c:/Ruby22/bin/sass:23:in `load'
+c:/Ruby22/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Undefined mixin 'breakpoint-min'.\A         on line 2 of scss/_component.footer.scss, in `breakpoint-min'\A         from line 2 of scss/_component.footer.scss\A         from line 5 of scss/_component.core.scss\A         from line 22 of scss/main.scss\A \A 1: /* ==========================================================================* /\A 2: /*\A 3:  * Tools: Default mixins and functions\A 4:  * Settings: Global variables, config switches\A 5:  * Generic: Ground-zero styles (Normalize, resets, box-sizing)\A 6:  * Base: Unclassed HTML elements (type selectors)\A 7:  * Vendor: Vendor specific files"; }

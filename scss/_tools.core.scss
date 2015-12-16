@@ -1,11 +1,11 @@
 // tools: default mixins and functions
 
-// @import
+@import
 //   'tools.functions',
 //   'tools.mixins'
 // tools.functions.font
-    tools.functions.color
-    tools.mixins.lists
-    tools.mixins.reset
+    'tools.functions.color',
+    'tools.mixins.lists',
+    'tools.mixins.reset' 
 
-// ;
+;
